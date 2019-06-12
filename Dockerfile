@@ -14,6 +14,8 @@ EXPOSE 22
 
 COPY entry.sh /entry.sh
 
+COPY chpasswd.pamd /etc/pam.d/chpasswd
+
 ENTRYPOINT ["/entry.sh"]
 
 CMD ["/usr/sbin/sshd", "-D", "-e", "-f", "/etc/ssh/sshd_config"]
